@@ -1,5 +1,3 @@
-import java.util.*;
-
 class Student {
 
     private String name;
@@ -96,4 +94,5 @@ public class Main {
         sc.close();
     }
 }
+
 
