@@ -46,7 +46,7 @@ class Student {
     }
 }
 
-public class Main {
+public class student_info {
 
     public static void main(String[] args) {
 
