@@ -32,7 +32,7 @@ class InternEmployee extends Employee {
     }
 }
 
-public class Main {
+public class inheritance {
     public static void main(String[] args) {
 
         FullTimeEmployee fte = new FullTimeEmployee(30000);
