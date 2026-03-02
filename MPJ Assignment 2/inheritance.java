@@ -1,51 +1,61 @@
 class Employee {
     double salary;
+    String name;
 
-    Employee(double salary) {
+    Employee(String name, double salary) {
+        this.name = name;
         this.salary = salary;
     }
 
+    void calculateSalary() {
+    }
+
     void displaySalary(String message) {
-        System.out.println(message + salary);
+        System.out.println(message + name + " : " + salary);
     }
 }
 
 class FullTimeEmployee extends Employee {
 
-    FullTimeEmployee(double salary) {
-        super(salary);
+    FullTimeEmployee(String name, double salary) {
+        super(name, salary);
     }
 
     void calculateSalary() {
-        salary = salary + (salary * 0.50); // 50% hike
+        salary = salary + (salary * 0.50);
     }
 }
 
 class InternEmployee extends Employee {
 
-    InternEmployee(double salary) {
-        super(salary);
+    InternEmployee(String name, double salary) {
+        super(name, salary);
     }
 
     void calculateSalary() {
-        salary = salary + (salary * 0.25); // 25% hike
+        salary = salary + (salary * 0.25);
     }
 }
 
-public class inheritance {
+public class InheritanceDemo {
     public static void main(String[] args) {
 
-        FullTimeEmployee fte = new FullTimeEmployee(30000);
-        InternEmployee intern = new InternEmployee(10000);
+        Employee[] employees = new Employee[4];
 
-        fte.displaySalary("Full Time Salary Before Hike: ");
-        fte.calculateSalary();
-        fte.displaySalary("Full Time Salary After Hike: ");
+        employees[0] = new FullTimeEmployee("Neeraj", 30000);
+        employees[1] = new InternEmployee("Rahul", 10000);
+        employees[2] = new FullTimeEmployee("Aman", 40000);
+        employees[3] = new InternEmployee("Priya", 12000);
 
-        System.out.println();
+        System.out.println("----- BEFORE HIKE -----");
+        for (Employee emp : employees) {
+            emp.displaySalary("");
+        }
 
-        intern.displaySalary("Intern Salary Before Hike: ");
-        intern.calculateSalary();
-        intern.displaySalary("Intern Salary After Hike: ");
+        System.out.println("\n----- AFTER HIKE -----");
+        for (Employee emp : employees) {
+            emp.calculateSalary();
+            emp.displaySalary("");
+        }
     }
 }
